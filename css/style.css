@@ -1,0 +1,74 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3rem;
+}
+p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.2rem;
+}
+img{
+    width: 100%;
+}
+#header{
+    background-color: rgb(49, 188, 188);
+    padding: 30px;
+    text-align: center;  
+}
+#row{
+    /* use flexbox on the parent div to layout a row or column of child divs*/
+    display: flex;
+    /* use row for desktop and tablet layout */
+    flex-direction: row;
+    /* wrap is used with tablet layout to create an extra row */
+    flex-wrap: wrap;
+}
+.column{
+    /* flex: 1 sets flex-grow to 1, flex-shrink to 1 and flex-basis to 1
+    flex-basis of 1 means child columns will have equal width */
+    flex: 1;
+    /* because box-sizing = border box, padding is counted as part of the overall width of the column*/
+    padding: 10px;
+}
+#col1{
+    background-color: aquamarine;
+}
+#col2{
+    background-color: coral;
+}
+#col3{
+    background-color: darkkhaki;
+}
+#col4{
+    background-color: rgb(42, 107, 27);
+}
+
+#footer{
+    background-color: blanchedalmond;
+    padding: 10px;
+    text-align: center;
+}
+/* break point for tablet */
+@media screen and (max-width: 900px){
+    .column{
+        min-width: 50%;
+    }
+}
+/* break point for mobile */
+@media screen and (max-width: 500px){
+    .column{
+        min-width: 100%;
+    }
+    .row{
+        flex-direction: column;
+    }
+    h1{
+        font-size: 4rem;
+    }
+    p{
+        font-size: 1.4rem;
+    }
+}
